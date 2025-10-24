@@ -11,23 +11,24 @@ public class Program {
 
         Scanner sc = new Scanner(System.in);
 
-        try {
+        System.out.println("Enter account data: ");
+        System.out.print("Number: ");
+        Integer number = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Holder: ");
+        String holder = sc.nextLine();
+        System.out.print("Initial balance: ");
+        Double balance = sc.nextDouble();
+        System.out.print("Whitdraw limit: ");
+        Double withdrawLimit = sc.nextDouble();
+        Account acc1 = new Account(number,holder,balance,withdrawLimit);
 
-            System.out.println("Enter account data: ");
-            System.out.print("Number: ");
-            Integer number = sc.nextInt();
-            sc.nextLine();
-            System.out.print("Holder: ");
-            String name = sc.nextLine();
-            System.out.print("Initial balance: ");
-            Double balance = sc.nextDouble();
-            System.out.print("Whitdraw limit: ");
-            Double withdrawLimit = sc.nextDouble();
-            Account acc1 = new Account(number,name,balance,withdrawLimit);
+        System.out.println();
+        System.out.print("Enter amount for withdraw: ");
+        Double amount = sc.nextDouble();
 
-            System.out.println();
-            System.out.print("Enter amount for withdraw: ");
-            Double amount = sc.nextDouble();
+        try{
+
             acc1.withdraw(amount);
             System.out.println("New balance: " + acc1.getBalance());
 
